@@ -1,0 +1,37 @@
+{
+  "name": "tailwindcss-react-admin-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.9.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.0.0-next.3e165448"
+  },
+  "scripts": {
+    "build:tailwind": "postcss src/tailwind/tailwind.css -o src/tailwind.css",
+    "watch:tailwind": "postcss src/tailwind/tailwind.css -o src/tailwind.css -w",
+    "start": "npm run watch:tailwind & react-scripts start",
+    "build": "npm run build:tailwind && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "postcss-cli": "^5.0.1",
+    "tailwindcss": "^0.6.3"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">0.25%",
+      "not op_mini all",
+      "ie 11"
+    ]
+  }
+}
