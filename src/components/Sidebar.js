@@ -5,7 +5,7 @@ import mountainBg from "../images/mountains-bg.jpg";
 class Sidebar extends Component {
   render() {
     return (
-      <nav className={"sidebar-container border-r overflow-y-auto lg:w-1/5 absolute sm:relative bg-cover bg-no-repeat bg-top bg-white " + (this.props.sidebarIsShown ? "hidden sm:flex" : "flex sm:hidden")} style={{backgroundImage: `url(${mountainBg})`}}>
+      <nav className={"sidebar-container border-r overflow-y-auto lg:w-1/5 absolute sm:relative bg-cover bg-no-repeat bg-top bg-white z-10 " + (this.props.sidebarIsShown ? "hidden sm:flex" : "flex sm:hidden")} style={{backgroundImage: `url(${mountainBg})`}}>
         <ul className="list-reset flex-1 mx-2 z-10">
           {this.props.pages.map((page, index)=><LinkItem page={page} key={index} location={this.props.location}/>)}
         </ul>
