@@ -7,17 +7,20 @@ class CardSmall extends Component{
         super(props);
         this.state = {}
 
-        this.initChart = (type, dataPoints)=>{
+        this.initChart = (type, props)=>{
+
+            let { dataPoints } = props
+
             this.chart = new Chart(this.refs.canvas, {
                 type: type,
                 data: {
                   labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                   datasets: [{
                     data: dataPoints,
-                    backgroundColor: 'rgba(220, 220, 220, 0.5)',
-                    borderColor: 'rgba(220, 220, 220, 1)',
-                    pointBackgroundColor: 'rgba(220, 220, 220, 1)',
-                    pointBorderColor: '#fff'
+                    backgroundColor: props.backgroundColor || 'rgba(220, 220, 220, 0.5)',
+                    borderColor: props.borderColor || 'rgba(220, 220, 220, 1)',
+                    pointBackgroundColor: props.pointBackgroundColor || 'rgba(220, 220, 220, 1)',
+                    pointBorderColor: props.pointBorderColor || '#fff'
                   }]
                 },
                 options: {
@@ -79,7 +82,7 @@ class CardSmall extends Component{
     }
 
     componentDidMount(){
-        this.initChart(this.props.type, this.props.dataPoints)
+        this.initChart(this.props.type, this.props)
     }
 
     componentDidUpdate(){
@@ -88,11 +91,11 @@ class CardSmall extends Component{
 
     render(){
         return (
-            <div className="flex flex-col w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2 ">
-                <div className="flex flex-col rounded shadow-md overflow-hidden bg-white flex-1">
-                    <span className="m-4 mb-0 text-xl">{this.getTotal() + "+"}</span>
-                    <span className="m-4 text-grey-dark">{this.props.title}</span>
-                    <canvas ref="canvas" className="w-full self-center"></canvas>
+            <div className="flex flex-col w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                <div className={"flex flex-col rounded shadow-lg overflow-hidden bg-white flex-1 relative " + this.props.className}>
+                    <span className="m-4 mb-0 text-xl">{Math.sign(this.getTotal()) === 1 ? "+" + this.getTotal() : this.getTotal()}</span>
+                    <span className="m-4">{this.props.title}</span>
+                    <canvas ref="canvas" height="150px" className="w-full self-center"></canvas>
                 </div>
             </div>
         )
