@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import BreadCrumb from '../navigation/BreadCrumb';
 
 class Settings extends Component {
   render() {
-    return (<div>Settings</div>);
+    return (
+      <>
+        <BreadCrumb />
+      </>
+    );
   }
 }
 
