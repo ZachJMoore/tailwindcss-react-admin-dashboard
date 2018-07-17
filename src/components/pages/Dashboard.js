@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import CardSmall from '../graphs/CardSmall';
-import CardLarge from '../graphs/CardLarge';
+import GraphSmall from '../graphs/GraphSmall';
+import GraphLarge from '../graphs/GraphLarge';
+import BreadCrumb from '../navigation/BreadCrumb';
 
 let getRandomData = (length, multiplier)=>{
   let array = [0]
@@ -61,15 +62,18 @@ class Dashboard extends Component {
   render() {
     return (
       <>
+
+        <BreadCrumb />
+
         <div className="flex w-full flex-wrap justify-start items-start my-1">
-          <CardSmall className="bg-blue-light text-white" backgroundColor="white" title="New Members" type="bar" dataPoints={this.state.newMembers} />
-          <CardSmall className="bg-green-light text-white" backgroundColor="white" borderColor="#f1f1f1" title="Growth" type="line" dataPoints={this.state.growth} />
-          <CardSmall className="bg-indigo-light text-white" backgroundColor="white" title="Sales" type="bar" dataPoints={this.state.sales} />
-          <CardSmall className="bg-red-light text-white" backgroundColor="white" title="Online Users" type="line" dataPoints={this.state.usersOnline} />
+          <GraphSmall className="bg-blue-light text-white" backgroundColor="white" title="New Members" type="bar" dataPoints={this.state.newMembers} />
+          <GraphSmall className="bg-green-light text-white" backgroundColor="white" title="Growth" type="line" dataPoints={this.state.growth} />
+          <GraphSmall className="bg-indigo-light text-white" backgroundColor="white" title="Sales" type="bar" dataPoints={this.state.sales} />
+          <GraphSmall className="bg-red-light text-white" backgroundColor="white" title="Online Users" type="line" dataPoints={this.state.usersOnline} />
         </div>
 
         <div className="flex w-full flex-wrap justify-start items-start my-1">
-          <CardLarge 
+          <GraphLarge 
             title="Traffic" 
             labels={this.state.traffic.labels}
             type="line"
