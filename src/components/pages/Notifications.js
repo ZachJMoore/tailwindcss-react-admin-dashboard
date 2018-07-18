@@ -7,7 +7,7 @@ class Notifications extends Component {
     return (<>
       <BreadCrumb />
       <div className="w-full flex flex-wrap my-2">
-        <div className="w-full md:w-1/2 px-2">
+        <div className="w-full md:w-1/2 px-2 my-2">
           <span className="text-xl">Basic Notifications</span>
           <NotifBasic className="text-grey-darker">
             This is a basic notification.
@@ -25,7 +25,7 @@ class Notifications extends Component {
             Button options can also be passed to make actionable notifications.
           </NotifBasic>
         </div>
-        <div className="w-full md:w-1/2 px-2">
+        <div className="w-full md:w-1/2 px-2 my-2">
           <span className="text-xl">Colored Notifications</span>
           <NotifBasic className="text-white bg-grey-dark" close={()=>{console.log("notification closed")}}>
             .text-white .bg-grey-dark
@@ -56,6 +56,16 @@ class Notifications extends Component {
           </NotifBasic>
           <NotifBasic className="text-white bg-pink-dark" close={()=>{console.log("notification closed")}}>
             .text-white .bg-pink-dark
+          </NotifBasic>
+        </div>
+        <div className="w-full md:w-1/2 px-2 my-2">
+          <span className="text-xl">One Of Each</span>
+          <NotifBasic className="text-white bg-red-light" close={()=>{console.log("notification closed")}} icon="fas fa-question-circle" buttons={[{children: "Lame", onClick:()=>{console.log("button pressed")}}, {children: "Cool", onClick: ()=>{console.log("button pressed")}}, {children: "Awesome!", onClick: ()=>{console.log("button pressed")}}]}>
+            All variations can be combined to customize each individual notification.
+            <br />
+            Break elements are also supported to add multi line notifications without needing to rely on word wrap.
+            <br />
+            What do you think?
           </NotifBasic>
         </div>
       </div>
