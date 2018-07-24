@@ -4,17 +4,16 @@ import { withRouter, Link } from "react-router-dom"
 let BreadCrumb = props => (
     <div className="w-full flex items-center justify-start">
         <div className="flex items-center justify-start m-2">
-            <Link to="/" className="no-underline capitalize text-blue-lighter hover:underline">home</Link>
-            {props.location.pathname.split("/").map((pathname,index)=>{
+            {props.rootIsShown !== false && <Link to="/" className="no-underline capitalize text-blue-lighter hover:underline">home</Link>}
+            {(props.path ? props.path : props.location.pathname).split("/").map((pathname,index)=>{
 
-                let locationArray = props.location.pathname.split("/")
+                let locationArray = (props.path ? props.path : props.location.pathname).split("/")
 
                 let getPath = ()=>{
                     let path = ""
                     for (let i = 1; i <= index; i++){
                         path += `/${locationArray[i]}`
                     }
-                    console.log(path)
                     return path
                 }
 

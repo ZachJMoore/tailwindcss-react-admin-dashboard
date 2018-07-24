@@ -1,6 +1,6 @@
 import React from "react";
 
-let NotifBasic = props => (
+let Notification = props => (
     <div className={"flex flex-col justify-between w-full p-2 py-4 pr-8 my-2 shadow-md overflow-hidden rounded relative " + props.className}>
         <div className="flex items-center">
             {props.icon && <i className={"text-2xl mr-2 " + props.icon}></i>}
@@ -17,4 +17,4 @@ let NotifBasic = props => (
     </div>
 )
 
-export default NotifBasic;
+export default Notification;

@@ -7,9 +7,9 @@ import Sidebar from './Sidebar';
 import Body from './Body';
 import Dashboard from './pages/Dashboard';
 import Notifications from './pages/Notifications';
-import Analytics from './pages/Analytics';
 import UserProfile from './pages/UserProfile';
-import Settings from './pages/Settings';
+import Navigation from './pages/Navigation';
+import Input from './pages/Input';
 
 const pages = [
   {
@@ -19,28 +19,28 @@ const pages = [
       component: Dashboard
   },
   {
-      name: "Notifications",
-      iconClass: "fas fa-bell",
-      path: "/notifications",
-      component: Notifications
-  },
-  {
-      name: "Analytics",
-      iconClass: "fas fa-chart-bar",
-      path: "/analytics",
-      component: Analytics
-  },
-  {
       name: "User Profile",
       iconClass: "fas fa-user",
       path: "/user-profile",
       component: UserProfile
   },
   {
-      name: "Settings",
-      iconClass: "fas fa-cogs",
-      path: "/settings",
-      component: Settings
+      name: "Notifications",
+      iconClass: "fas fa-bell",
+      path: "/notifications",
+      component: Notifications
+  },
+  {
+      name: "Navigation",
+      iconClass: "fas fa-bars",
+      path: "/navigation",
+      component: Navigation
+  },
+  {
+      name: "Input",
+      iconClass: "fas fa-keyboard",
+      path: "/input",
+      component: Input
   }
 ]
 

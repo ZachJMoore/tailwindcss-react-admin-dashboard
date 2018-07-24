@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import BreadCrumb from '../navigation/BreadCrumb';
 
-class Analytics extends Component {
+class Input extends Component {
   render() {
     return (
       <>
-      <BreadCrumb />
+        <BreadCrumb />
       </>
     );
   }
 }
 
-export default Analytics;
+export default Input;
